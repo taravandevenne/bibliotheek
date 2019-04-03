@@ -18,12 +18,12 @@ use Faker\Provider\nl_BE\Person;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'voornaam' => $faker->firstName,
-        'achternaam' => $faker->lastName,
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
-        'rijksregisternummer' => Person::rrn(),
-        'paswoord' => $faker -> password,
+        'rrn' => Person::rrn(),
+        'password' => $faker -> password,
         'remember_token' => Str::random(10),
     ];
 });
